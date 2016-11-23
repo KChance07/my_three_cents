@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='two-cents'>
+<head>
+  <meta charset="UTF-8">
+  <title>My Two Cents</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div ng-controller="MainController">
+      Author:
+      <input type="text" ng-model='newPost.author'> <br>
+      Title:
+      <input type="text" ng-model='newPost.title'> <br>
+      Body:
+      <textarea cols="30" rows="10" ng-model='newPost.body'></textarea> <br>
+      <button class="btn btn-default" ng-click='create(newPost)'>Create</button>
+      <hr>
+      Deleted:
+      <input type="text" ng-model='deleteId'>
+      <button class="btn btn-danger" ng-click="delete(deleteId)">&times;</button>
+      <hr>
+      Get One:
+      <input type="text" ng-model='getId'>
+      <button class="btn btn-success" ng-click="getOne(getId)">Get That!</button>
+      <hr>
+      Update:
+      <input type="text" ng-model='id'>
+      <input type="text" ng-model='newPostData.author'>
+      <input type="text" ng-model='newPostData.title'>
+      <textarea ng-model='newPostData.body' cols="30" rows="10"></textarea>
+      <button class="btn btn-default" ng-click="updatePost(id, newPostData)"></button>
+      <hr>
+      <pre>
+        {{ posts | json }}
+      </pre>
+    </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/controllers/main.controller.js"></script>
+  <script src="js/services/post.service.js"></script>
+</body>
+</html>
