@@ -23,6 +23,8 @@
       Get One:
       <input type="text" ng-model='getId'>
       <button class="btn btn-success" ng-click="getOne(getId)">Get That!</button>
+      {{ selectedPost }}
+      <button class="btn btn-default" ng-click="getSelectedPost()">Get Select!</button>
       <hr>
       Update:
       <input type="text" ng-model='id'>
