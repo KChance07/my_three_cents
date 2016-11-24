@@ -15,11 +15,9 @@
     function getOne(id){
       PostService.getOne(id);
     }
-
     function getSelectedPost(){
       $scope.selectedPost = PostService.getSelectedPost();
     }
-
     $scope.$watch(function(){
       return PostService.getAll();
     }, function(){
@@ -33,12 +31,10 @@
       PostService.delete(id);
       $scope.deleteId = '';
     }
-
     function updatePost(id, newPostData){
       PostService.update(id, newPostData);
       $scope.updateId = '';
       $scope.updatedPost = {};
     }
   }
-
 }());
